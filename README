@@ -1,4 +1,5 @@
-```shell
+```
+
 (venv) asheshvidyut@asheshvidyut:~/issue-39702$ python test.py
 
 --- Using descriptor_pool.Default().FindMethodByName ---
@@ -6,4 +7,5 @@ Found method: affirm.grpc.fixtures.v1.GrpcTestService.ReflectReqId
   Input type: affirm.grpc.fixtures.v1.ReflectReqIdRequest
   Output type: affirm.grpc.fixtures.v1.ReflectReqIdResponse
 (venv) asheshvidyut@asheshvidyut:~/issue-39702$
+
 ```
