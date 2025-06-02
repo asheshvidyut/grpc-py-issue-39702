@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package affirm.grpc.fixtures.v1;
+
+import "affirm/grpc/fixtures/v1/messages.proto";
+service GrpcTestService {
+  rpc ReflectReqId(ReflectReqIdRequest) returns (ReflectReqIdResponse);
+  rpc RaiseError(RaiseErrorRequest) returns (RaiseErrorResponse);
+  rpc Blocking(BlockingRequest) returns (BlockingResponse);
+  rpc BlockingV2(BlockingV2Request) returns (BlockingV2Response);
+  rpc Validate(ValidateRequest) returns (ValidateResponse);
+}

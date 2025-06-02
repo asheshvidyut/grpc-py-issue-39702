@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package affirm.grpc.fixtures.v1;
+
+message ReflectReqIdRequest {
+  optional string question = 1;
+}
+
+message ReflectReqIdResponse {
+  optional string reqid = 1;
+}
+
+message RaiseErrorRequest {
+  optional string error = 1;
+}
+
+message RaiseErrorResponse {
+  optional string error = 1;
+}
+
+message BlockingRequest {
+  optional string blocktype = 1;
+}
+
+message BlockingResponse {
+  optional string data = 1;
+}
+
+message BlockingV2Request {
+  optional string blocktype = 1;
+}
+
+message BlockingV2Response {
+  optional string data = 1;
+}
+
+message ValidateRequest {
+  ValidatedMessage message = 1;
+}
+
+message ValidateResponse {
+  ValidatedMessage message = 1;
+}
+
+message ValidatedMessage {
+  optional string required_field = 1;
+  optional TestEnum enum = 4;
+}
+
+enum TestEnum {
+  TEST_ENUM_UNSPECIFIED = 0;
+  TEST_ENUM_ONE = 1;
+  TEST_ENUM_TWO = 2;
+}
