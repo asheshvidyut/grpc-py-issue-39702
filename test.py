@@ -3,7 +3,7 @@ from google.protobuf import descriptor_pool
 
 print("\n--- Using descriptor_pool.Default().FindMethodByName ---")
 full_method_name_to_find = 'affirm.grpc.fixtures.v1.GrpcTestService.ReflectReqId'
-method_descriptor_from_pool = descriptor_pool.Default().FindFileByName("message")
+method_descriptor_from_pool = descriptor_pool.Default().FindMethodByName(full_method_name_to_find)
 
 if method_descriptor_from_pool:
     print(f"Found method: {method_descriptor_from_pool.full_name}")
