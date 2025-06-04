@@ -3,6 +3,7 @@
 import grpc
 import warnings
 
+from affirm.grpc.fixtures.v1 import interface_pb2 as affirm_dot_grpc_dot_fixtures_dot_v1_dot_interface__pb2
 from affirm.grpc.fixtures.v1 import messages_pb2 as affirm_dot_grpc_dot_fixtures_dot_v1_dot_messages__pb2
 
 GRPC_GENERATED_VERSION = '1.71.0'
@@ -59,6 +60,11 @@ class GrpcTestServiceStub(object):
                 request_serializer=affirm_dot_grpc_dot_fixtures_dot_v1_dot_messages__pb2.ValidateRequest.SerializeToString,
                 response_deserializer=affirm_dot_grpc_dot_fixtures_dot_v1_dot_messages__pb2.ValidateResponse.FromString,
                 _registered_method=True)
+        self.Wish = channel.unary_unary(
+                '/affirm.grpc.fixtures.v1.GrpcTestService/Wish',
+                request_serializer=affirm_dot_grpc_dot_fixtures_dot_v1_dot_interface__pb2.HelloWorld.SerializeToString,
+                response_deserializer=affirm_dot_grpc_dot_fixtures_dot_v1_dot_interface__pb2.HelloWorld.FromString,
+                _registered_method=True)
 
 
 class GrpcTestServiceServicer(object):
@@ -94,6 +100,12 @@ class GrpcTestServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Wish(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_GrpcTestServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -121,6 +133,11 @@ def add_GrpcTestServiceServicer_to_server(servicer, server):
                     servicer.Validate,
                     request_deserializer=affirm_dot_grpc_dot_fixtures_dot_v1_dot_messages__pb2.ValidateRequest.FromString,
                     response_serializer=affirm_dot_grpc_dot_fixtures_dot_v1_dot_messages__pb2.ValidateResponse.SerializeToString,
+            ),
+            'Wish': grpc.unary_unary_rpc_method_handler(
+                    servicer.Wish,
+                    request_deserializer=affirm_dot_grpc_dot_fixtures_dot_v1_dot_interface__pb2.HelloWorld.FromString,
+                    response_serializer=affirm_dot_grpc_dot_fixtures_dot_v1_dot_interface__pb2.HelloWorld.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -258,6 +275,33 @@ class GrpcTestService(object):
             '/affirm.grpc.fixtures.v1.GrpcTestService/Validate',
             affirm_dot_grpc_dot_fixtures_dot_v1_dot_messages__pb2.ValidateRequest.SerializeToString,
             affirm_dot_grpc_dot_fixtures_dot_v1_dot_messages__pb2.ValidateResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Wish(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/affirm.grpc.fixtures.v1.GrpcTestService/Wish',
+            affirm_dot_grpc_dot_fixtures_dot_v1_dot_interface__pb2.HelloWorld.SerializeToString,
+            affirm_dot_grpc_dot_fixtures_dot_v1_dot_interface__pb2.HelloWorld.FromString,
             options,
             channel_credentials,
             insecure,

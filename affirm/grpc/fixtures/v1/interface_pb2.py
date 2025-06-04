@@ -25,13 +25,15 @@ _sym_db = _symbol_database.Default()
 from affirm.grpc.fixtures.v1 import messages_pb2 as affirm_dot_grpc_dot_fixtures_dot_v1_dot_messages__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'affirm/grpc/fixtures/v1/interface.proto\x12\x17\x61\x66\x66irm.grpc.fixtures.v1\x1a&affirm/grpc/fixtures/v1/messages.proto2\x8e\x04\n\x0fGrpcTestService\x12k\n\x0cReflectReqId\x12,.affirm.grpc.fixtures.v1.ReflectReqIdRequest\x1a-.affirm.grpc.fixtures.v1.ReflectReqIdResponse\x12\x65\n\nRaiseError\x12*.affirm.grpc.fixtures.v1.RaiseErrorRequest\x1a+.affirm.grpc.fixtures.v1.RaiseErrorResponse\x12_\n\x08\x42locking\x12(.affirm.grpc.fixtures.v1.BlockingRequest\x1a).affirm.grpc.fixtures.v1.BlockingResponse\x12\x65\n\nBlockingV2\x12*.affirm.grpc.fixtures.v1.BlockingV2Request\x1a+.affirm.grpc.fixtures.v1.BlockingV2Response\x12_\n\x08Validate\x12(.affirm.grpc.fixtures.v1.ValidateRequest\x1a).affirm.grpc.fixtures.v1.ValidateResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'affirm/grpc/fixtures/v1/interface.proto\x12\x17\x61\x66\x66irm.grpc.fixtures.v1\x1a&affirm/grpc/fixtures/v1/messages.proto\"\x1d\n\nHelloWorld\x12\x0f\n\x07message\x18\x01 \x01(\t2\xe0\x04\n\x0fGrpcTestService\x12k\n\x0cReflectReqId\x12,.affirm.grpc.fixtures.v1.ReflectReqIdRequest\x1a-.affirm.grpc.fixtures.v1.ReflectReqIdResponse\x12\x65\n\nRaiseError\x12*.affirm.grpc.fixtures.v1.RaiseErrorRequest\x1a+.affirm.grpc.fixtures.v1.RaiseErrorResponse\x12_\n\x08\x42locking\x12(.affirm.grpc.fixtures.v1.BlockingRequest\x1a).affirm.grpc.fixtures.v1.BlockingResponse\x12\x65\n\nBlockingV2\x12*.affirm.grpc.fixtures.v1.BlockingV2Request\x1a+.affirm.grpc.fixtures.v1.BlockingV2Response\x12_\n\x08Validate\x12(.affirm.grpc.fixtures.v1.ValidateRequest\x1a).affirm.grpc.fixtures.v1.ValidateResponse\x12P\n\x04Wish\x12#.affirm.grpc.fixtures.v1.HelloWorld\x1a#.affirm.grpc.fixtures.v1.HelloWorldb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'affirm.grpc.fixtures.v1.interface_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_GRPCTESTSERVICE']._serialized_start=109
-  _globals['_GRPCTESTSERVICE']._serialized_end=635
+  _globals['_HELLOWORLD']._serialized_start=108
+  _globals['_HELLOWORLD']._serialized_end=137
+  _globals['_GRPCTESTSERVICE']._serialized_start=140
+  _globals['_GRPCTESTSERVICE']._serialized_end=748
 # @@protoc_insertion_point(module_scope)
