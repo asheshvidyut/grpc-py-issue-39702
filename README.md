@@ -1,9 +1,11 @@
-To generate the protos
+#### To generate the protos
 
 ```bash
 cd grpc-py-issue-39702
 python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. affirm/grpc/fixtures/v1/interface.proto affirm/grpc/fixtures/v1/messages.proto
 ```
+
+#### Run
 
 ```bash
 (venv) asheshvidyut@asheshvidyut:~/issue-39702$ python test.py
